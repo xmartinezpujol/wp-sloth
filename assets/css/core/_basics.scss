@@ -1,0 +1,174 @@
+@mixin max-width {
+  @each $range in $container {
+    &.w-#{$range} {
+        max-width: $range + px ;
+    }
+  }
+}
+
+@include max-width;
+
+@mixin padding {
+  @each $range in $padding {
+    &.pad-#{$range} {
+        padding: $range + px ;
+    }
+    &.pad-h-#{$range} {
+        padding-left: $range + px ;
+        padding-right: $range + px ;
+    }
+    &.pad-v-#{$range} {
+        padding-top: $range + px ;
+        padding-bottom: $range + px ;
+    }
+  }
+}
+
+@include padding;
+
+@mixin margin {
+  @each $range in $margin {
+    &.margin-#{$range} {
+        margin: $range + px ;
+    }
+    &.margin-h-#{$range} {
+        margin-left: $range + px;
+        margin-right: $range + px;
+    }
+    &.margin-v-#{$range} {
+        margin-top: $range + px ;
+        margin-bottom: $range + px ;
+    }
+  }
+}
+
+@include margin;
+
+@mixin media-breakpoint($type) {
+  @if $type == 'sm' {
+    @media (min-width: #{$mobile}) {
+      @content;
+    }
+  } @elseif $type == 'md' {
+    @media (min-width: #{$tablet}) {
+      @content;
+    }
+  } @elseif $type == 'lg' {
+    @media (min-width: #{$tablet-h}) {
+      @content;
+    }
+  } @elseif $type == 'hd' {
+    @media (min-width: #{$desktop}) {
+      @content;
+    }
+  }
+}
+
+@mixin media-breakpoint-max($type) {
+  @if $type == 'sm' {
+    @media (max-width: #{$mobile-max}) {
+      @content;
+    }
+  } @elseif $type == 'md' {
+    @media (max-width: #{$tablet-max}) {
+      @content;
+    }
+  } @elseif $type == 'lg' {
+    @media (max-width: #{$tablet-h-max}) {
+      @content;
+    }
+  } @elseif $type == 'hd' {
+    @media (max-width: #{$desktop-max}) {
+      @content;
+    }
+  }
+}
+
+.img-responsive {
+  width: 100%;
+  height: auto;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+.center-txt {
+  text-align: center;
+}
+
+.right {
+  float: right;
+}
+
+.full-width {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+blockquote {
+  padding: 20px;
+}
+
+//Responsive images
+img {
+    width: 100%;
+    display: block;
+    margin: 0;
+}
+
+//MEDIA QUERIES
+@include media-breakpoint(sm) {
+  .container-bd {
+    max-width: $sm-width;
+  }
+}
+
+@include media-breakpoint(md) {
+  .container-bd {
+    max-width: $md-width;
+  }
+}
+
+@include media-breakpoint(lg) {
+  .container-bd {
+    max-width: $lg-width;
+  }
+}
+
+@include media-breakpoint(hd) {
+  .container-bd {
+    max-width: $hd-width;
+  }
+}
+
+@include media-breakpoint-max(sm) {
+  [class^="block"] {
+    max-width: 90% !important;
+  }
+  input[type="text"], .button {
+    max-width: 50%;
+  }
+  a, .form-input {
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
+
+
+  .row {
+    flex-flow: column !important;
+  }
+}
+
+@include media-breakpoint-max(md) {
+}
+
+@include media-breakpoint-max(lg) {
+}
+
+@include media-breakpoint-max(hd) {
+}

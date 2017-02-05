@@ -1,0 +1,38 @@
+@mixin flex ($direction, $justify, $align, $wrap) {
+  display: flex;
+  flex-flow: $direction;
+  justify-content: $justify;
+
+  @if $align != 'none'{
+    align-items: $align;
+  }
+  @if $wrap != 'none' {
+    flex-wrap: $wrap;
+  }
+}
+
+// Flexbox
+.row {
+  @include flex (row, center, none, wrap);
+}
+
+.column {
+  @include flex (column, center, none, wrap);
+}
+
+// Overrides de justify
+.flex-start {
+  justify-content: flex-start;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.flex-space {
+  justify-content: space-between;
+}
+
+.flex-around {
+  justify-content: space-around;
+}

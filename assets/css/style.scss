@@ -1,0 +1,132 @@
+// Includes
+@import "core/variables";
+@import "core/basics";
+@import "core/colors";
+@import "core/typo";
+@import "core/normalize";
+@import "components/grid";
+
+// Custom styles
+.block {
+  flex: 1;
+  color: white;
+  padding: 20px;
+  & p {
+    padding: 10px;
+  }
+}
+.block-full {
+  max-width: 100%;
+}
+.block-alert {
+  max-width: 150px;
+  background-color: red;
+  border-radius: 20px;
+}
+
+//IMAGE STYLING
+.block-img {
+  max-width: 120px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 5px #5E35B1 solid;
+  &:hover.gallery {
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.5);
+    cursor: pointer;
+    border: 5px solid white;
+  }
+}
+.block-img-icons {
+  max-width: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  border: 5px #5E35B1 solid;
+}
+.block-portrait {
+  flex: 1;
+  background-color: $color-acc;
+  overflow: hidden;
+  padding: 20px;
+}
+
+//BUTTONS
+.button-social-icon {
+  max-width: 80px;
+  border-radius: 25px;
+  background-color: white;
+  margin: 10px;
+  transition: all 0.3s ease-in-out;
+  &.icon {
+    width: 48px;
+    height: 48px;
+  }
+  a:hover & {
+    background-color: $color-acc;
+    fill: white;
+    border: 5px solid #FFFFff;
+    box-shadow: inset 1px 1px 1px 10px red;
+    box-sizing: border-box;
+  }
+}
+
+.button {
+  max-width: 200px;
+  border-radius: 25px;
+  transition: all 0.3s ease-in-out;
+  &.icon {
+    width: 48px;
+    height: 48px;
+  }
+  a:hover & {
+    background-color: $color-acc;
+    fill: white;
+    border: 5px solid #FFFFff;
+    box-shadow: inset 1px 1px 1px 10px red;
+    box-sizing: border-box;
+  }
+}
+
+// FORMS
+input[type="text"] {
+  border-color: $color-pri;
+  font-weight: 600;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  &:focus {
+    content: '';
+  }
+  &.form-input {
+    max-width: 100px;
+    margin-right: auto;
+    margin-left: auto;
+    border: 5px solid black;
+    border-radius: 50px;
+    padding: 10px;
+    margin: 15px;
+    text-align: center;
+  }
+}
+
+a {
+  border-color: $color-pri;
+  font-weight: 600;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  &.button {
+    max-width: 150px;
+    border: 5px solid black;
+    padding: 10px 30px 10px 30px;
+    margin: 15px;
+    background-color: $color-acc;
+    border-color: white;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

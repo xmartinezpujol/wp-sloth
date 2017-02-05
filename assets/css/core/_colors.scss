@@ -1,0 +1,57 @@
+//COLOR BACKGROUND
+.color-pri {
+  background-color: $color-pri;
+}
+
+.color-duo {
+  background-color: $color-duo;
+}
+
+.color-tri {
+  background-color: $color-tri;
+}
+
+.color-acc {
+  background-color: $color-acc;
+}
+
+.text-color-pri {
+  color: $color-pri;
+}
+
+.text-color-duo {
+  color: $color-duo;
+}
+
+.text-color-tri {
+  color: $color-tri;
+}
+
+.text-color-acc {
+  color: $color-acc;
+}
+
+.text-white {
+  color: white;
+}
+
+.text-black {
+  color: black;
+}
+
+.white {
+  background-color: white;
+  color: black;
+}
+
+.black {
+  background-color: black;
+  color: white;
+}
+
+.gradient-1 {
+  background: linear-gradient(50deg, #B388EB, #8093F1);
+  filter: saturate(1.6);
+  color: white;
+  opacity: 0.95;
+}
